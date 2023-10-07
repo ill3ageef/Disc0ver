@@ -8,4 +8,8 @@ views = Blueprint('views', __name__)
 def home():
     return "<h1>Home Page Waassup!</h1>"
 
+@views.route('/')
+def home2():
+    return "<h1>Home Page Ur not logged in!</h1>"
+
 
