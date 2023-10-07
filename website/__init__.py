@@ -23,14 +23,11 @@ def create_app():
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
 
-    from .models import User
+    from .models import User, Project
 
     with app.app_context():
         db.create_all()
-        if not User.query.filter_by(email="admin@admin.com").first():
-            admin = User()
-            db.session.add(admin)
-            db.session.commit()
+        
 
     login_manager = LoginManager()
     login_manager.login_view = 'auth.login'
@@ -39,6 +36,5 @@ def create_app():
     @login_manager.user_loader
     def load_user(id):
         return User.query.get(int(id))
-
 
     return app
