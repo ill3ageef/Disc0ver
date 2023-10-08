@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block content %}
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+      <div class="container">
+        <h2>Sign up to create an account</h2>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+
+      <div class="container" data-aos="fade-up">
+
+      <div class="row mt-5">
+
+      </div>
+  </div>
+
+      
+<style>
+  .full-height {
+      display: flex;
+      align-items: center;  /* Centers children vertically */
+      justify-content: center;  /* Centers children horizontally */
+      height: fit-content;  /* Takes the full viewport height */
+      padding-bottom: 30px;
+  }
+
+  .centered-form {
+      max-width: 800px;  /* Or whatever fixed width you want */
+      width: 100%;
+      margin: auto;
+  }
+
+  span.select2{
+    width:100% !important;
+    background-color: var(--bs-body-bg);
+    background-clip: padding-box;
+    border-radius: var(--bs-border-radius);
+    font-size: 1rem;
+  }
+  .select2-container--default .select2-selection--multiple{
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+  }
+</style>
+
+
+<div class="full-height">
+  <div class="centered-form">
+
+     
+    <div class="col-lg-8 mx-auto mt-5 mt-lg-0">
+          <form action="" method="POST" role="form" class="php-email-form">
+              <div class="row">
+                  <div class="col-md-6 form-group">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Full Name" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="Email" required>
+                  </div>
+              </div>
+              <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="user" id="user" placeholder="Username" required>
+              </div>
+              <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="password" id="password" placeholder="Password" required>
+              </div>
+              <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="confpassword" id="confpassword" placeholder="Confirm Password" required>
+              </div>
+              <div class="form-group mt-3">
+                <label for="skills">Skills: </label>
+                <select class="skill-selector" name="skills[]" multiple="multiple">
+           
+                  <option value="BI">Biology</option>
+                  <option value="PH">Physics</option>
+                  <option value="CH">Chemistry</option>
+                  <option value="SS">Social Science</option>
+                  <option value="AS">Astrology</option>
+                  <option value="CS">Computer Science</option>
+                  <option value="NA">Natural Science</option>
+                  <option value="GE">Geology</option>
+                  <option value="ES">Earth Science</option>
+                  <option value="NU">Neuro Science</option>
+                  <option value="ME">Medicinee</option>
+                </select>
+
+              </div>
+
+              
+                 <div class="form-group mt-3">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+          </form>
+      </div>
+      
+  </div>
+</div>
+
+ 
+  <script>
+    $(document).ready(function() {
+      $('.skill-selector').select2();
+});
+  </script>
+
+  {% endblock %}

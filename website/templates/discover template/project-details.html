@@ -1,0 +1,156 @@
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+      <div class="container">
+        <h2>Project Details</h2>
+        <!-- <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p> -->
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Cource Details Section ======= -->
+    <section id="course-details" class="course-details">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-8">
+            
+            <h3>Project Name</h3>
+            <p>
+              Qui et explicabo voluptatem et ab qui vero et voluptas. Sint voluptates temporibus quam autem. Atque nostrum voluptatum laudantium a doloremque enim et ut dicta. Nostrum ducimus est iure minima totam doloribus nisi ullam deserunt. Corporis aut officiis sit nihil est. Labore aut sapiente aperiam.
+              Qui voluptas qui vero ipsum ea voluptatem. Omnis et est. Voluptatem officia voluptatem adipisci et iusto provident doloremque consequatur. Quia et porro est. Et qui corrupti laudantium ipsa.
+              Eum quasi saepe aperiam qui delectus quaerat in. Vitae mollitia ipsa quam. Ipsa aut qui numquam eum iste est dolorum. Rem voluptas ut sit ut.
+            </p>
+          </div>
+          <div class="col-lg-4">
+
+            <div class="course-info d-flex justify-content-between align-items-center">
+              <img src="assets/img/trainers/trainer-1.jpg" class="img-fluid owner-pic" alt="">
+              <p><a href="#">Owner Name</a></p>
+            </div>
+
+            <div class="course-info d-flex justify-content-between align-items-center">
+              <h5>Repo:</h5>
+              <p><a href="#">Link</a></p>
+            </div>
+
+            <div class="course-info d-flex justify-content-between align-items-center">
+              <h5>countributers </h5>
+              <p>30</p>
+            </div>
+
+            <div class="course-info d-flex justify-content-between align-items-center">
+              <h5>Rating</h5>
+              <p>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </p>
+            </div>
+
+            <a href="Projects.html" class="contribute-btn" >I want to contribute</a>
+           
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cource Details Section -->
+
+    <!-- ======= Cource Details Tabs Section ======= -->
+    <section id="cource-details-tabs" class="cource-details-tabs">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-3">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Objectives</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Skills</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-9 mt-4 mt-lg-0">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <div class="row">
+                  <div class="col-lg-12 details order-2 order-lg-1">
+                    <h3>Project Objectives</h3>
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium vero cupiditate facilis id laborum labore eius modi ex alias quidem molestias reprehenderit ratione quia, minima debitis laudantium recusandae est distinctio.</p>
+                  </div>
+                 
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <div class="row">
+                  <div class="col-lg-12 details order-2 order-lg-1">
+                    <h3>Set of Skills Requiered</h3>
+                    
+                    <p>List of the skills requiered</p>
+                  </div>
+                 
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cource Details Tabs Section -->
+
+    <section id="cource-details-tabs" class="cource-details-tabs">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-12">
+            
+            <h3>Rate The Project</h3>
+
+            <div class="rating-stars">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            
+            <form action="">
+              <input type="hidden" name="rating" id="rating">
+              <button class="rating-btn" type="submit">Submit</button>
+            </form>
+
+        </div>
+        </section>
+
+
+  </main><!-- End #main -->
+
+
+
+  <script>
+     // Select all elements with the "i" tag and store them in a NodeList called "stars"
+    const stars = document.querySelectorAll(".rating-stars span");
+    const input = document.getElementById("rating");
+
+    // Loop through the "stars" NodeList
+    stars.forEach((star, index1) => {
+      
+      // Add an event listener that runs a function when the "click" event is triggered
+      star.addEventListener("click", () => {
+        console.log(index1+1);
+        input.value=index1+1;
+        // Loop through the "stars" NodeList Again
+        stars.forEach((star, index2) => {
+          // Add the "active" class to the clicked star and any stars with a lower index
+          // and remove the "active" class from any stars with a higher index
+          
+          index1 >= index2 ? star.classList.add("checked") : star.classList.remove("checked");
+    });
+  });
+});
+  </script>
