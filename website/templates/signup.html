@@ -52,7 +52,7 @@
 
      
     <div class="col-lg-8 mx-auto mt-5 mt-lg-0">
-          <form action="" method="POST" role="form" class="php-email-form">
+          <form action="" method="POST" role="form">
               <div class="row">
                   <div class="col-md-6 form-group">
                       <input type="text" name="name" class="form-control" id="name" placeholder="Full Name" required>
@@ -73,26 +73,17 @@
               <div class="form-group mt-3">
                 <label for="skills">Skills: </label>
                 <select class="skill-selector" name="skills[]" multiple="multiple">
-           
-                  <option value="BI">Biology</option>
-                  <option value="PH">Physics</option>
-                  <option value="CH">Chemistry</option>
-                  <option value="SS">Social Science</option>
-                  <option value="AS">Astrology</option>
-                  <option value="CS">Computer Science</option>
-                  <option value="NA">Natural Science</option>
-                  <option value="GE">Geology</option>
-                  <option value="ES">Earth Science</option>
-                  <option value="NU">Neuro Science</option>
-                  <option value="ME">Medicinee</option>
+                    {% for k,v in skills.items() %}
+                  <option value="{{ k }}">{{ v }}</option>
+                    {% endfor %}
                 </select>
 
               </div>
 
               
                  <div class="form-group mt-3">
-            <button type="submit" class="btn btn-primary">Sign Up</button>
-        </div>
+                  <button type="submit" class="btn btn-primary">Sign Up</button>
+                </div>
           </form>
       </div>
       
@@ -100,10 +91,6 @@
 </div>
 
  
-  <script>
-    $(document).ready(function() {
-      $('.skill-selector').select2();
-});
-  </script>
+ 
 
   {% endblock %}

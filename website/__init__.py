@@ -8,6 +8,19 @@ from werkzeug.security import generate_password_hash
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
+sk = {
+    "BI": "Biology",
+    "PH": "Physics",
+    "CH": "Chemistry",
+    "SS": "Social Science",
+    "AS": "Astrology",
+    "CS": "Computer Science",
+    "NA": "Natural Science",
+    "GE": "Geology",
+    "ES": "Earth Science",
+    "NU": "Neuro Science",
+    "ME": "Medicine"
+}
 
 
 def create_app():
@@ -26,6 +39,7 @@ def create_app():
     from .models import User, Project
 
     with app.app_context():
+        
         db.create_all()
         
 

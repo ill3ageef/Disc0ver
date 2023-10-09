@@ -12,9 +12,15 @@
   <!-- Favicons -->
   <link href="{{url_for('static', filename='assets/img/favicon.png')}}" rel="icon">
   <link href="{{url_for('static', filename='assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  
+  
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/font-awesome.min.css')}}">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Rubik+Beastly&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="{{url_for('static', filename='assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
@@ -36,7 +42,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="{{url_for('views.home')}}">Disc0ver</a></h1>
+      <h1 class="logo me-auto" style="font-family: 'Gugi', cursive;"><a href="{{url_for('views.home')}}">Disc0ver</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -45,10 +51,8 @@
           <li><a class="active" href="index.html">Home</a></li>
           <li class="dropdown"><a href="{{url_for('views.home')}}"><span>Projects</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Cat 1</a></li>
-              <li><a href="#">Cat 2</a></li>
-              <li><a href="#">Cat 3</a></li>
-              <li><a href="#">Cat 4</a></li>
+              <li><a href="{{ url_for('views.projects') }}">Recomended</a></li>
+              <li><a href="{{ url_for('views.uploaded') }}">Uploaded</a></li>
             </ul>
           </li>
           <li><a href="{{url_for('views.home')}}">Contact</a></li>
@@ -62,6 +66,7 @@
   </header><!-- End Header -->
 
   <!-- Content Over Here -->
+
   {% block content %}
   {% endblock %}
 
@@ -134,7 +139,14 @@
   <script src="{{url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
   <script src="{{url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
   <script src="{{url_for('static', filename='assets/vendor/php-email-form/validate.js')}}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+  <script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/select2.min.js')}}"></script>
+  <script>
+    $(document).ready(function() {
+      $('.skill-selector').select2();
+  });
+  </script>
 
   <!-- Template Main JS File -->
   <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
